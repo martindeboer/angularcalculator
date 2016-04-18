@@ -25,7 +25,6 @@ var App;
                     this.palinDromes = [];
                     this.registerCallBacks();
                     this.running = false;
-                    // Under normal circumstances I would move this to an overarching project controller
                 }
                 registerCallBacks() {
                     this.rootScope.$on("newPalinDrome", (event, palinDrome) => {

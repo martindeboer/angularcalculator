@@ -8,6 +8,7 @@ using AngularTest.Services;
 using System.Web.Mvc;
 using SimpleInjector.Integration.Web.Mvc;
 using AngularTest.Interfaces;
+using System.Web.Http;
 
 [assembly: OwinStartup(typeof(AngularTest.Startup))]
 
@@ -17,6 +18,7 @@ namespace AngularTest
     {
         public void Configuration(IAppBuilder app)
         {
+           
             var container = new Container();
 
             container.Register<IPalinDromeService,PalinDromeService>(Lifestyle.Transient);
@@ -28,6 +30,8 @@ namespace AngularTest
             GlobalHost.DependencyResolver.Register(typeof(IHubActivator), () => activator);
             
             app.MapSignalR();
+                     
+           
             // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=316888
         }
     }

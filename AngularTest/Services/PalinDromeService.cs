@@ -20,21 +20,37 @@ namespace AngularTest.Services
         /// <param name="minLength"></param>
         /// <param name="maxLength"></param>
         /// <returns></returns>
-        public string GeneratePalinDrome (int minLength, int maxLength)
+        public string GeneratePalinDrome(int minLength, int maxLength)
         {
+            int letterIndex;
+
             if (minLength > maxLength || maxLength > 100 || minLength <= 0)
             {
                 throw new Exception("Invalid input");
             }
 
-            //minLength = minLength / 2;
-            //maxLength = maxLength / 2 + maxLength % 2;
+            var randomString = "";
+            var length = _random.Next(minLength, maxLength + 1);
 
-            var randomString = this.GenerateRandomString(minLength, maxLength);
+            for (int count = 0; count < length / 2; count++)
+            {
+                letterIndex = _random.Next(0, 26);
+                randomString += (char)('a' + letterIndex);
+            }
 
-            randomString = randomString.Substring(0, (randomString.Length / 2) + randomString.Length % 2);
+            letterIndex = _random.Next(0, 26);
 
-            return this.TurnStringIntoPalinDrome(randomString);
+            var charArray = randomString.ToCharArray();
+            Array.Reverse(charArray);
+
+            if (length % 2 != 0)
+            {
+                randomString += (char)('a' + letterIndex);
+            }
+
+            randomString += new string(charArray);
+
+            return randomString;
         }
 
         /// <summary>
@@ -44,34 +60,34 @@ namespace AngularTest.Services
         /// <param name="minLength"></param>
         /// <param name="maxLength"></param>
         /// <returns></returns>
-        public string GenerateRandomString(int minLength, int maxLength)
-        {
-            if (minLength > maxLength || maxLength > 100 || minLength <= 0)
-            {
-                throw new Exception("Invalid input");
-            }
+        //public string GenerateRandomString(int minLength, int maxLength)
+        //{
+        //    if (minLength > maxLength || maxLength > 100 || minLength <= 0)
+        //    {
+        //        throw new Exception("Invalid input");
+        //    }
 
-            var randomString = "";
-            var length = _random.Next(minLength, maxLength+1);
+        //    var randomString = "";
+        //    var length = _random.Next(minLength, maxLength+1);
 
-            for (int count = 0; count < length; count++)
-            {
-                var letterIndex = _random.Next(0, 26);
-                randomString += (char)('a' + letterIndex);
-            }
+        //    for (int count = 0; count < length; count++)
+        //    {
+        //        var letterIndex = _random.Next(0, 26);
+        //        randomString += (char)('a' + letterIndex);
+        //    }
 
-            return randomString;
-        }
+        //    return randomString;
+        //}
 
-        public string TurnStringIntoPalinDrome (string palinFirstPart)
-        {
-            palinFirstPart = Regex.Replace(palinFirstPart, "([^a-zA-Z]{1,})", "");
+        //public string TurnStringIntoPalinDrome (string palinFirstPart)
+        //{
+        //    palinFirstPart = Regex.Replace(palinFirstPart, "([^a-zA-Z]{1,})", "");
 
-            var palinLastPart = palinFirstPart.Substring(0, palinFirstPart.Length - (palinFirstPart.Length % 2)).ToCharArray();
+        //    var palinLastPart = palinFirstPart.Substring(0, palinFirstPart.Length - (palinFirstPart.Length % 2)).ToCharArray();
 
-            Array.Reverse(palinLastPart);
+        //    Array.Reverse(palinLastPart);
 
-            return palinFirstPart + new string(palinLastPart);
-        }
+        //    return palinFirstPart + new string(palinLastPart);
+        //}
     }
 }

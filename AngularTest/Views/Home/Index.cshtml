@@ -6,8 +6,20 @@
     }
 </head>
 <body ng-app="app" ng-controller="AngularTestController">
-    <div ui-view>
+    <div layout="row">
+        <div layout="column">
+            <div layout="row">
+                <a ui-sref="home">Home</a>
+            </div>
+            <div layout="row">
+                <a ui-sref="calculator">Calculator</a>
+            </div>
+        </div>
+        <div layout="column">
+            <div ui-view>
 
+            </div>
+        </div>
     </div>
     @{
         @Html.Partial("~/Views/Shared/_Scripts.cshtml");

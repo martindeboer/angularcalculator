@@ -20,6 +20,12 @@ app.config(["$stateProvider", "$locationProvider", (stateProvider, locationProvi
         controller: "HomeController as ctrl"
     });
 
+    stateProvider.state('calculator', {
+        url: '/calculator',
+        templateUrl: '/Content/Views/Calculator.html',
+        controller: "CalculatorController as ctrl"
+    });
+
     stateProvider.state("otherwise", {
         url: '/',
         templateUrl: '/Content/Views/Home.html',

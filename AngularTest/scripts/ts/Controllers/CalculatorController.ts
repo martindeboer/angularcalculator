@@ -3,12 +3,12 @@ module App.AngularTest.Controllers {
     "use strict";
 
 
-    interface IHomeController {
+    interface ICalculatorController {
 
     }
 
   
-    class HomeController implements IHomeController {
+    class CalculatorController implements ICalculatorController {
       
         static $inject: string[] =
         ["$scope", "$rootScope", "SynchronizationService"];
@@ -29,5 +29,5 @@ module App.AngularTest.Controllers {
    
 
     }
-    angular.module("app").controller("HomeController", HomeController);
+    angular.module("app").controller("CalculatorController", CalculatorController);
 }

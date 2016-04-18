@@ -6,7 +6,7 @@ var App;
         var Controllers;
         (function (Controllers) {
             "use strict";
-            class HomeController {
+            class CalculatorController {
                 constructor($scope, rootScope, synchronizationService) {
                     this.$scope = $scope;
                     this.rootScope = rootScope;
@@ -16,8 +16,8 @@ var App;
                 activate() {
                 }
             }
-            HomeController.$inject = ["$scope", "$rootScope", "SynchronizationService"];
-            angular.module("app").controller("HomeController", HomeController);
+            CalculatorController.$inject = ["$scope", "$rootScope", "SynchronizationService"];
+            angular.module("app").controller("CalculatorController", CalculatorController);
         })(Controllers = AngularTest.Controllers || (AngularTest.Controllers = {}));
     })(AngularTest = App.AngularTest || (App.AngularTest = {}));
 })(App || (App = {}));

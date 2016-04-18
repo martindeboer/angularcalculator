@@ -1,1 +1,38 @@
-﻿<h1>calculator</h1>
+﻿<div layout="row">
+    <div layout="column">
+        <md-input-container>
+            <input />
+        </md-input-container>
+    </div>
+    <div layout="column">
+        <md-input-container>
+            <md-radio-group>
+                <md-radio-button ng-value="0">
+                    Add
+                </md-radio-button>
+                <md-radio-button ng-value="1">
+                    Subtract
+                </md-radio-button>
+                <md-radio-button ng-value="2">
+                    Divide
+                </md-radio-button>
+                <md-radio-button ng-value="3">
+                    Multiply
+                </md-radio-button>
+            </md-radio-group>
+        </md-input-container>
+    </div>
+    <div layout="column">
+        <md-input-container>
+            <input />
+        </md-input-container>
+    </div>
+</div>
+<div layout="row">
+    <md-button>
+        Execute
+    </md-button>
+</div>
+<div layout="row">
+    <h1>Result: </h1> {{ctrl.result}}
+</div>

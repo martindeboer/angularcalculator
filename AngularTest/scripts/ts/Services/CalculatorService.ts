@@ -18,6 +18,7 @@
         subtractUrl = "/subtract";
         apiUrl = "/api/math"
 
+
         static $inject: string[] = ["$q","$http"];
 
         constructor(private q: any, private http: ng.IHttpService)
@@ -29,8 +30,8 @@
         Multiply(leftHand: number, rightHand: number): angular.IPromise<number>
         {
             var defer = this.q.defer();
-                      
-            this.http.get(this.apiUrl + this.multiplyUrl)
+
+            this.http.get(this.apiUrl + this.multiplyUrl + this.argumentsUrl(leftHand, rightHand))
                 .then((response: any) => {
 
                     var result = response.data;
@@ -49,7 +50,7 @@
         {
             var defer = this.q.defer();
 
-            this.http.get(this.apiUrl + this.divideUrl)
+            this.http.get(this.apiUrl + this.divideUrl + this.argumentsUrl(leftHand, rightHand))
                 .then((response: any) => {
 
                     var result = response.data;
@@ -68,7 +69,7 @@
         {
             var defer = this.q.defer();
 
-            this.http.get(this.apiUrl + this.addUrl)
+            this.http.get(this.apiUrl + this.addUrl + this.argumentsUrl(leftHand, rightHand))
                 .then((response: any) => {
 
                     var result = response.data;
@@ -87,7 +88,7 @@
         {
             var defer = this.q.defer();
 
-            this.http.get(this.apiUrl + this.subtractUrl)
+            this.http.get(this.apiUrl + this.subtractUrl + this.argumentsUrl(leftHand, rightHand))
                 .then((response: any) => {
 
                     var result = response.data;
@@ -100,6 +101,11 @@
                 });
 
             return defer.promise;
+        }
+
+        private argumentsUrl(leftHand: number, rightHand: number): string
+        {
+            return `?leftHand=${leftHand}&rightHand=${rightHand}`;
         }
 
       

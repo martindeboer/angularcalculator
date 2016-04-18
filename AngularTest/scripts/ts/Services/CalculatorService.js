@@ -18,7 +18,7 @@ var App;
                 }
                 Multiply(leftHand, rightHand) {
                     var defer = this.q.defer();
-                    this.http.get(this.apiUrl + this.multiplyUrl)
+                    this.http.get(this.apiUrl + this.multiplyUrl + this.argumentsUrl(leftHand, rightHand))
                         .then((response) => {
                         var result = response.data;
                         defer.resolve(result);
@@ -30,7 +30,7 @@ var App;
                 }
                 Divide(leftHand, rightHand) {
                     var defer = this.q.defer();
-                    this.http.get(this.apiUrl + this.divideUrl)
+                    this.http.get(this.apiUrl + this.divideUrl + this.argumentsUrl(leftHand, rightHand))
                         .then((response) => {
                         var result = response.data;
                         defer.resolve(result);
@@ -42,7 +42,7 @@ var App;
                 }
                 Add(leftHand, rightHand) {
                     var defer = this.q.defer();
-                    this.http.get(this.apiUrl + this.addUrl)
+                    this.http.get(this.apiUrl + this.addUrl + this.argumentsUrl(leftHand, rightHand))
                         .then((response) => {
                         var result = response.data;
                         defer.resolve(result);
@@ -54,7 +54,7 @@ var App;
                 }
                 Subtract(leftHand, rightHand) {
                     var defer = this.q.defer();
-                    this.http.get(this.apiUrl + this.subtractUrl)
+                    this.http.get(this.apiUrl + this.subtractUrl + this.argumentsUrl(leftHand, rightHand))
                         .then((response) => {
                         var result = response.data;
                         defer.resolve(result);
@@ -63,6 +63,9 @@ var App;
                         var debug = 0;
                     });
                     return defer.promise;
+                }
+                argumentsUrl(leftHand, rightHand) {
+                    return `?leftHand=${leftHand}&rightHand=${rightHand}`;
                 }
             }
             CalculatorService.$inject = ["$q", "$http"];

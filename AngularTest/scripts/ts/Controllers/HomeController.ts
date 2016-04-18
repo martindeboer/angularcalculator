@@ -31,7 +31,7 @@ module App.AngularTest.Controllers {
         constructor(
             private $scope: ng.IScope,
             private rootScope: angular.IRootScopeService,
-            private synchronizationService: App.AngularTest.Services.ISynchronizationService
+            private synchronizationService: App.AngularTest.Services.ICalculatorService
         )
         {
             this.activate();

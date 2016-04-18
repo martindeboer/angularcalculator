@@ -240,6 +240,7 @@
     <TypeScriptCompile Include="scripts\ts\Controllers\CalculatorController.ts" />
     <TypeScriptCompile Include="scripts\ts\Controllers\HomeController.ts" />
     <TypeScriptCompile Include="scripts\ts\RouteConfig.ts" />
+    <TypeScriptCompile Include="scripts\ts\Services\CalculatorService.ts" />
     <TypeScriptCompile Include="scripts\ts\Services\SynchronizationService.ts" />
     <TypeScriptCompile Include="scripts\ts\SignalR.ts" />
     <TypeScriptCompile Include="typings\browser.d.ts" />

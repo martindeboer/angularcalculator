@@ -1,11 +1,11 @@
 ﻿<div layout="row">
     <div layout="column">
         <md-input-container>
-            <input />
+            <input  ng-model="ctrl.leftHand"/>
         </md-input-container>
     </div>
     <div layout="column">
-        <md-input-container>
+        <md-input-container ng-model="ctrl.operator">
             <md-radio-group>
                 <md-radio-button ng-value="0">
                     Add
@@ -24,12 +24,12 @@
     </div>
     <div layout="column">
         <md-input-container>
-            <input />
+            <input  ng-model="ctrl.rightHand" />
         </md-input-container>
     </div>
 </div>
 <div layout="row">
-    <md-button>
+    <md-button ng-click="ctrl.cmdExecuteOnClick()">
         Execute
     </md-button>
 </div>

@@ -18,7 +18,7 @@ module App.AngularTest.Controllers {
         ["SynchronizationService"];
 
         constructor(
-            private synchronizationService: App.AngularTest.Services.ISynchronizationService
+            private synchronizationService: App.AngularTest.Services.ICalculatorService
         ) {
             this.activate();
         }

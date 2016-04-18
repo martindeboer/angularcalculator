@@ -42,7 +42,7 @@ module App.AngularTest.Controllers {
             this.palinDromes = [];
             this.registerCallBacks();
             this.running = false;
-            // Under normal circumstances I would move this to an overarching project controller
+           
         }
 
         registerCallBacks()

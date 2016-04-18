@@ -221,6 +221,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="scripts\ts\app.ts" />
     <TypeScriptCompile Include="scripts\ts\Controllers\AngularTestController.ts" />
+    <TypeScriptCompile Include="scripts\ts\Controllers\CalculatorController.ts" />
     <TypeScriptCompile Include="scripts\ts\Controllers\HomeController.ts" />
     <TypeScriptCompile Include="scripts\ts\RouteConfig.ts" />
     <TypeScriptCompile Include="scripts\ts\Services\SynchronizationService.ts" />

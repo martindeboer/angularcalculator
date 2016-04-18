@@ -17,7 +17,6 @@ namespace AngularTest.Hubs
         private static Dictionary<string, Timer> _timerMappings;
         private static Dictionary<string, int> _minimums;
         private static Dictionary<string, int> _maximums;
-        private Timer _timer;
         private const int _startAfter = 2000;
         private const int _fireEvery = 2000;
         private IPalinDromeService _palinDromeService;
@@ -50,7 +49,7 @@ namespace AngularTest.Hubs
         {
             if (!_timerMappings.ContainsKey(Context.ConnectionId))
             {
-                _timer = new Timer();
+                Timer _timer = new Timer();
 
                 _timer.Interval = _fireEvery;
                 _timer.Elapsed += new ElapsedEventHandler(this.OnTick);

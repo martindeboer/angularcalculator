@@ -32,7 +32,7 @@ module App.AngularTest.Controllers {
 
         cmdExecuteOnClick()
         {
-            switch (this.operator)
+            switch (parseInt(this.operator as any))
             {
                 case 0:
                     this.calculatorService.Add(this.leftHand, this.rightHand).then((result) =>
@@ -43,19 +43,19 @@ module App.AngularTest.Controllers {
                     break;
                 case 1:
                     this.calculatorService.Subtract(this.leftHand, this.rightHand).then((result) => {
-                        console.log(this.leftHand + " + " + this.rightHand + " = " + result);
+                        console.log(this.leftHand + " - " + this.rightHand + " = " + result);
                         this.result = result;
                     });
                     break;
                 case 2:
                     this.calculatorService.Divide(this.leftHand, this.rightHand).then((result) => {
-                        console.log(this.leftHand + " + " + this.rightHand + " = " + result);
+                        console.log(this.leftHand + " / " + this.rightHand + " = " + result);
                         this.result = result;
                     });
                     break;
                 case 3:
                     this.calculatorService.Multiply(this.leftHand, this.rightHand).then((result) => {
-                        console.log(this.leftHand + " + " + this.rightHand + " = " + result);
+                        console.log(this.leftHand + " * " + this.rightHand + " = " + result);
                         this.result = result;
                     });
                     break;

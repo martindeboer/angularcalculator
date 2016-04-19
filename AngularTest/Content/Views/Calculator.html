@@ -1,38 +1,40 @@
-﻿<div layout="row">
-    <div layout="column">
-        <md-input-container>
-            <input  ng-model="ctrl.leftHand"/>
-        </md-input-container>
+﻿<div class="view">
+    <div layout="row">
+        <div layout="column">
+            <md-input-container>
+                <input ng-model="ctrl.leftHand" />
+            </md-input-container>
+        </div>
+        <div layout="column">
+            <md-input-container>
+                <md-radio-group ng-model="ctrl.operator">
+                    <md-radio-button ng-value="0">
+                        Add
+                    </md-radio-button>
+                    <md-radio-button ng-value="1">
+                        Subtract
+                    </md-radio-button>
+                    <md-radio-button ng-value="2">
+                        Divide
+                    </md-radio-button>
+                    <md-radio-button ng-value="3">
+                        Multiply
+                    </md-radio-button>
+                </md-radio-group>
+            </md-input-container>
+        </div>
+        <div layout="column">
+            <md-input-container>
+                <input ng-model="ctrl.rightHand" />
+            </md-input-container>
+        </div>
     </div>
-    <div layout="column">
-        <md-input-container>
-            <md-radio-group ng-model="ctrl.operator">
-                <md-radio-button ng-value="0">
-                    Add
-                </md-radio-button>
-                <md-radio-button ng-value="1">
-                    Subtract
-                </md-radio-button>
-                <md-radio-button ng-value="2">
-                    Divide
-                </md-radio-button>
-                <md-radio-button ng-value="3">
-                    Multiply
-                </md-radio-button>
-            </md-radio-group>
-        </md-input-container>
+    <div layout="row">
+        <md-button ng-click="ctrl.cmdExecuteOnClick()">
+            Execute
+        </md-button>
     </div>
-    <div layout="column">
-        <md-input-container>
-            <input  ng-model="ctrl.rightHand" />
-        </md-input-container>
+    <div layout="row">
+        <h1>Result: </h1> {{ctrl.result}}
     </div>
-</div>
-<div layout="row">
-    <md-button ng-click="ctrl.cmdExecuteOnClick()">
-        Execute
-    </md-button>
-</div>
-<div layout="row">
-    <h1>Result: </h1> {{ctrl.result}}
 </div>

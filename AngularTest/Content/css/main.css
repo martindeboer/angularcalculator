@@ -1,4 +1,18 @@
 ﻿body {
+    
+    font-size: large;
+}
+
+.view {
+    margin: 5px;
+}
+
+.palindrome {
+    margin: 5px;
+}
+
+.menubar {
+    border: 1px solid black;
 }
 
 .menubar .menuitem {

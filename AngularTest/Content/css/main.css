@@ -3,6 +3,11 @@
     font-size: large;
 }
 
+.title {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .view {
     margin: 5px;
 }

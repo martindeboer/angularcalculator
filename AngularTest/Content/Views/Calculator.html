@@ -1,7 +1,7 @@
 ﻿<div class="view">
     <div layout="row">
         <md-input-container>
-            <input type="number" maxlength="20" ng-model="ctrl.calculatorInput"/>
+            <input type="number" maxlength="20" ng-model="ctrl.calculatorInput" disabled="disabled"/>
         </md-input-container>
     </div>
     <div layout="row">
@@ -106,7 +106,7 @@
         <div layout="column" class="calculator_button" layout-align="center center">
             x^y 
         </div>
-        <div layout="column" class="calculator_button" layout-align="center center">
+        <div layout="column" class="calculator_button" layout-align="center center" ng-click="ctrl.cmdNumberOnClick(0)">
             0
         </div>
         <div layout="column" class="calculator_button" layout-align="center center">

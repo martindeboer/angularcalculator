@@ -33,10 +33,10 @@ module App.AngularTest.Controllers {
 
         cmdNumberOnClick(numberClicked: number)
         {
-            var buffer = this.input.toString();
+            var buffer = this.calculatorInput.toString();
             buffer = buffer.concat(numberClicked.toString());
 
-            this.input = parseInt(buffer);
+            this.calculatorInput = parseInt(buffer);
         }
 
         cmdExecuteOnClick()

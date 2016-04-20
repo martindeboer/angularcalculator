@@ -15,6 +15,11 @@ var App;
                 }
                 activate() {
                 }
+                cmdNumberOnClick(numberClicked) {
+                    var buffer = this.calculatorInput.toString();
+                    buffer = buffer.concat(numberClicked.toString());
+                    this.calculatorInput = parseInt(buffer);
+                }
                 cmdExecuteOnClick() {
                     switch (parseInt(this.operator)) {
                         case 0:

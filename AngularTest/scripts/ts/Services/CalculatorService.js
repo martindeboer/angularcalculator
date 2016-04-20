@@ -17,44 +17,20 @@ var App;
                     this.apiUrl = "/api/math";
                 }
                 Multiply(leftHand, rightHand) {
-                    var defer = this.q.defer();
-                    this.http.get(this.apiUrl + this.multiplyUrl + this.argumentsUrl(leftHand, rightHand))
-                        .then((response) => {
-                        var result = response.data;
-                        defer.resolve(result);
-                    }, (response) => {
-                        alert(response);
-                        var debug = 0;
-                    });
-                    return defer.promise;
+                    return this.QueryServer(this.multiplyUrl, leftHand, rightHand);
                 }
                 Divide(leftHand, rightHand) {
-                    var defer = this.q.defer();
-                    this.http.get(this.apiUrl + this.divideUrl + this.argumentsUrl(leftHand, rightHand))
-                        .then((response) => {
-                        var result = response.data;
-                        defer.resolve(result);
-                    }, (response) => {
-                        alert(response);
-                        var debug = 0;
-                    });
-                    return defer.promise;
+                    return this.QueryServer(this.divideUrl, leftHand, rightHand);
                 }
                 Add(leftHand, rightHand) {
-                    var defer = this.q.defer();
-                    this.http.get(this.apiUrl + this.addUrl + this.argumentsUrl(leftHand, rightHand))
-                        .then((response) => {
-                        var result = response.data;
-                        defer.resolve(result);
-                    }, (response) => {
-                        alert(response);
-                        var debug = 0;
-                    });
-                    return defer.promise;
+                    return this.QueryServer(this.addUrl, leftHand, rightHand);
                 }
                 Subtract(leftHand, rightHand) {
+                    return this.QueryServer(this.subtractUrl, leftHand, rightHand);
+                }
+                QueryServer(subApi, leftHand, rightHand) {
                     var defer = this.q.defer();
-                    this.http.get(this.apiUrl + this.subtractUrl + this.argumentsUrl(leftHand, rightHand))
+                    this.http.get(this.apiUrl + subApi + this.argumentsUrl(leftHand, rightHand))
                         .then((response) => {
                         var result = response.data;
                         defer.resolve(result);

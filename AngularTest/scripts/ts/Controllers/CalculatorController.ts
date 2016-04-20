@@ -28,14 +28,16 @@ module App.AngularTest.Controllers {
         }
 
         activate() {
-         
+            this.calculatorInput = 0;
         }
 
+      
         cmdNumberOnClick(numberClicked: number)
         {
             var buffer = this.calculatorInput.toString();
             buffer = buffer.concat(numberClicked.toString());
 
+            buffer.replace("[0]{0,}", "");
             this.calculatorInput = parseInt(buffer);
         }
 

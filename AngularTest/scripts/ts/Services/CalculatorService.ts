@@ -29,66 +29,29 @@
 
         Multiply(leftHand: number, rightHand: number): angular.IPromise<number>
         {
-            var defer = this.q.defer();
-
-            this.http.get(this.apiUrl + this.multiplyUrl + this.argumentsUrl(leftHand, rightHand))
-                .then((response: any) => {
-
-                    var result = response.data;
-
-                    defer.resolve(result);
-
-                }, (response: any) => {
-                    alert(response);
-                    var debug = 0;
-                });
-
-            return defer.promise;
+            return this.QueryServer(this.multiplyUrl, leftHand, rightHand);
         }
 
         Divide(leftHand: number, rightHand: number): angular.IPromise<number>
         {
-            var defer = this.q.defer();
-
-            this.http.get(this.apiUrl + this.divideUrl + this.argumentsUrl(leftHand, rightHand))
-                .then((response: any) => {
-
-                    var result = response.data;
-
-                    defer.resolve(result);
-
-                }, (response: any) => {
-                    alert(response);
-                    var debug = 0;
-                });
-
-            return defer.promise;
+            return this.QueryServer(this.divideUrl, leftHand, rightHand);
         }
 
         Add(leftHand: number, rightHand: number): angular.IPromise<number>
         {
-            var defer = this.q.defer();
-
-            this.http.get(this.apiUrl + this.addUrl + this.argumentsUrl(leftHand, rightHand))
-                .then((response: any) => {
-
-                    var result = response.data;
-
-                    defer.resolve(result);
-
-                }, (response: any) => {
-                    alert(response);
-                    var debug = 0;
-                });
-
-            return defer.promise;
+            return this.QueryServer(this.addUrl, leftHand, rightHand);
         }
 
         Subtract(leftHand: number, rightHand: number): angular.IPromise<number>
         {
+            return this.QueryServer(this.subtractUrl, leftHand, rightHand);
+        }
+
+        private QueryServer(subApi: string, leftHand: number, rightHand: number): angular.IPromise<number>
+        {
             var defer = this.q.defer();
 
-            this.http.get(this.apiUrl + this.subtractUrl + this.argumentsUrl(leftHand, rightHand))
+            this.http.get(this.apiUrl + subApi + this.argumentsUrl(leftHand, rightHand))
                 .then((response: any) => {
 
                     var result = response.data;

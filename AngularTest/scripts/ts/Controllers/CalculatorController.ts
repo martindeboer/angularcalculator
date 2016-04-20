@@ -14,6 +14,7 @@ module App.AngularTest.Controllers {
         leftHand: number;
         rightHand: number;
         result: number;
+        calculatorInput: number;
 
         static $inject: string[] =
         ["$scope", "$rootScope", "CalculatorService"];
@@ -28,6 +29,14 @@ module App.AngularTest.Controllers {
 
         activate() {
          
+        }
+
+        cmdNumberOnClick(numberClicked: number)
+        {
+            var buffer = this.input.toString();
+            buffer = buffer.concat(numberClicked.toString());
+
+            this.input = parseInt(buffer);
         }
 
         cmdExecuteOnClick()

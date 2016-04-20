@@ -1,5 +1,126 @@
 ﻿<div class="view">
     <div layout="row">
+        <md-input-container>
+            <input type="number" maxlength="20" ng-model="ctrl.calculatorInput"/>
+        </md-input-container>
+    </div>
+    <div layout="row">
+        <div layout="column" ng-click="" class="calculator_button">
+           Rad
+        </div>
+        <div layout="column" class="calculator_button">
+            Deg
+        </div>
+        <div layout="column" class="calculator_button">
+            x!
+        </div>
+        <div layout="column" class="calculator_button">
+            (
+        </div>
+        <div layout="column" class="calculator_button">
+            )
+        </div>
+        <div layout="column" class="calculator_button">
+            %
+        </div>
+        <div layout="column" class="calculator_button">
+            CE
+        </div>
+    </div>
+    <div layout="row">
+        <div layout="column" class="calculator_button">
+            Inv
+        </div>
+        <div layout="column" class="calculator_button">
+            Sin
+        </div>
+        <div layout="column" class="calculator_button">
+            ln
+        </div>
+        <div layout="column" ng-click="ctrl.cmdNumberOnClick(7)" class="calculator_button">
+            7
+        </div>
+        <div layout="column" ng-click="ctrl.cmdNumberOnClick(8)" class="calculator_button">
+            8
+        </div>
+        <div layout="column" ng-click="ctrl.cmdNumberOnClick(9)" class="calculator_button">
+            9
+        </div>
+        <div layout="column" class="calculator_button">
+            /
+        </div>
+    </div>
+    <div layout="row">
+        <div layout="column" class="calculator_button">
+            π
+        </div>
+        <div layout="column" class="calculator_button">
+            cos
+        </div>
+        <div layout="column" class="calculator_button">
+            log
+        </div>
+        <div layout="column" ng-click="ctrl.cmdNumberOnClick(4)" class="calculator_button">
+            4
+        </div>
+        <div layout="column" ng-click="ctrl.cmdNumberOnClick(5)" class="calculator_button">
+            5
+        </div>
+        <div layout="column" ng-click="ctrl.cmdNumberOnClick(6)" class="calculator_button">
+            6
+        </div>
+        <div layout="column" class="calculator_button">
+            x
+        </div>
+    </div>
+    <div layout="row">
+        <div layout="column" class="calculator_button">
+            e
+        </div>
+        <div layout="column" class="calculator_button">
+            tan
+        </div>
+        <div layout="column" class="calculator_button">
+            √
+        </div>
+        <div layout="column" ng-click="ctrl.cmdNumberOnClick(1)" class="calculator_button">
+            1
+        </div>
+        <div layout="column" ng-click="ctrl.cmdNumberOnClick(2)" class="calculator_button">
+            2
+        </div>
+        <div layout="column" ng-click="ctrl.cmdNumberOnClick(3)" class="calculator_button">
+            3
+        </div>
+        <div layout="column" class="calculator_button">
+            -
+        </div>
+    </div>
+    <div layout="row">
+        <div layout="column" class="calculator_button">
+            Ans
+        </div>
+        <div layout="column" class="calculator_button">
+            EXP
+        </div>
+        <div layout="column" class="calculator_button">
+            x^y 
+        </div>
+        <div layout="column" class="calculator_button">
+            0
+        </div>
+        <div layout="column" class="calculator_button">
+            .
+        </div>
+        <div layout="column" class="calculator_button">
+            =
+        </div>
+        <div layout="column" class="calculator_button">
+            +
+        </div>
+    </div>
+   
+    <div layout="row">
         <div layout="column">
             <md-input-container>
                 <input ng-model="ctrl.leftHand" />

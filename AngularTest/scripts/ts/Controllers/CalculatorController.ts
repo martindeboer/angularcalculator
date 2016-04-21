@@ -2,6 +2,9 @@
 module App.AngularTest.Controllers {
     "use strict";
 
+    /*
+     *  Reworking this entire file,  currently broken. Will work again soon.
+     */
 
     interface ICalculatorController {
 
